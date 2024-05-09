@@ -5,19 +5,9 @@
   font-family: inter;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .container{
-  width: 600px;
+  width: 100%;
   max-height: auto;
-  margin: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 header{
@@ -58,7 +48,7 @@ header nav > a:hover{
 .home{
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("/src/assets/9b62f902c3de6d1b54b3a5d23341752c.png") no-repeat center center;
   background-size: cover;
-  min-height: 390px;
+  height: 75vh;
   padding: 45px 23px;
   display: flex;
   flex-direction: column;
@@ -102,7 +92,7 @@ header nav > a:hover{
   width: 100%;
   background-color: #252525;
   color: #AAAAAA; 
-  height: 70px;
+  height: 50px;
   padding: 15px;
   text-align: center;
   display: flex;
@@ -114,10 +104,14 @@ header nav > a:hover{
 .footer p{
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
-.footer img{
-  height: 18px;
+.footer span{
+  font-size: 20px;
+  display: block;
+  font-weight: 200;
 }
 
 
@@ -151,13 +145,11 @@ header nav > a:hover{
 }
 
 .about .explore-box{
-  width: 80%;
+  width: 60%;
   background-color: #FFCC8D;
   border-radius: 5px;
   padding: 20px;
-  position: relative;
-  left: calc(20% / 2);
-  margin: 25px 0;
+  margin: 25px 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -209,9 +201,11 @@ header nav > a:hover{
 .van-list{
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  width: 70%;
+  margin-left: 15%;
 }
 
 .van h3{

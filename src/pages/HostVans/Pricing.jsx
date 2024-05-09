@@ -2,7 +2,7 @@ import React from "react"
 import {useOutletContext} from "react-router-dom"
 
 export default function Pricing(){
-    const {currentVan} = useOutletContext
+    const {currentVan} = useOutletContext()
     return(
         <div className="pricing">
             {

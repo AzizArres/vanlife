@@ -3,9 +3,8 @@ import React from 'react'
 
 export default function Footer(){
     return(
-        <div className="footer"> 
-            <img src="/src/assets/right.png" alt="copyright" />   
-            <p>2022 #VANLIFE</p>
+        <div className="footer">  
+            <p><span>&#169;</span>2022 #VANLIFE</p>
         </div>
     )
 }
