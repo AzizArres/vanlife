@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 export default function About(){
     return(
         <div className="about">
-            <img src=".../assets/87f1968974ee12ce5da85059cc83bb81.png" alt="" />
+            <img src="src/assets/87f1968974ee12ce5da85059cc83bb81.png" alt="" />
             <h2>Dont squeeze in a sedan when you could relaxe in a van</h2>
             <p>
                 Our mission is to enliven your road with the perfect
