@@ -18,6 +18,7 @@ import HostVanDetail from "./pages/Host/HostVanDetail.jsx"
 import Details from "./pages/HostVans/Details.jsx"
 import Pricing from "./pages/HostVans/Pricing.jsx"
 import Photos from "./pages/HostVans/Photos.jsx"
+import NotFound from "./pages/NotFound.jsx" 
 
 
 function App() {
@@ -43,7 +44,9 @@ function App() {
               </Route>
               <Route path="reviews" element={<Reviews />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
+          
         </Routes>
       </BrowserRouter>
     </div>

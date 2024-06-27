@@ -3,12 +3,11 @@ import React from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 
 
-
 export default function Vans(){
-    const [searchParams, setSearchParams] = useSearchParams()
-    const [vans, setVans] = React.useState([])
 
-    const typeFilter = searchParams.get("type")
+    const [searchParams, setSearchParams] = useSearchParams()
+    const typeFilter = searchParams.get('type')
+    const [vans, setVans] = React.useState([])
 
     React.useEffect(()=>{
         fetch("/api/vans")
@@ -16,12 +15,10 @@ export default function Vans(){
         .then(data => setVans(data.vans))
     }, [])
 
-    const filteredVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans
-
-    const vanElements = filteredVans.map(van => (
+    const vanElements = vans.filter((van) => typeFilter ? van.type === typeFilter : van).map(van => (
         <div key={van.id} className="van">
-            <Link to={`/vans/${van.id}`}>
-                <img src={van.imageUrl} alt="" />
+            <Link to={`${van.id}`}>
+                <img src={van.imageUrl} alt="" loading="lazy" />
                 <div className="van-info">
                     <h3>{van.name}</h3>
                     <p>${van.price}<span>/day</span></p>
@@ -30,17 +27,17 @@ export default function Vans(){
             </Link>
         </div>
     ))
-
+    
     return(
         <div className="vans">
             <h1>Explore our van options</h1>
+            <div className="vans-filter-buttons">
+                <button className={`van-type simple ${typeFilter === "simple" ? "selected" : ""}`} onClick={() => setSearchParams({type: "simple"})}>Simple</button>
+                <button className={`van-type rugged ${typeFilter === "rugged" ? "selected" : ""}`} onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
+                <button className={`van-type luxury ${typeFilter === "luxury" ? "selected" : ""}`} onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
+                <button className="clear-type" onClick={() => setSearchParams({})}>Clear filters</button>
+            </div>
             <div className="van-list-container">
-                <nav className="filters">
-                    <button onClick={()=> setSearchParams("?type=simple")} className="van-type-button simple">Simple</button>
-                    <button onClick={()=> setSearchParams("?type=luxury")} className="van-type-button luxury">Luxury</button>
-                    <button onClick={()=> setSearchParams("?type=rugged")} className="van-type-button rugged">Rugged</button>
-                    <button onClick={()=> setSearchParams("")} className="van-type-button clear-filter">Clear filter</button>
-                </nav>
                 <div className="van-list">
                     {vanElements}
                 </div>

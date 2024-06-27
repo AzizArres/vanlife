@@ -22,7 +22,7 @@ export default function VanDetail(){
             </Link>
             {van ? (
                 <div className="van-detail">
-                    <img src={van.imageUrl} />
+                    <img src={van.imageUrl}  loading="lazy" />
                     <div className={`van-type ${van.type} selected`}>{van.type}</div>
                     <h2>{van.name}</h2>
                     <p className="van-price"><span>${van.price}</span>/day</p>

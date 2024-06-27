@@ -218,13 +218,6 @@ header nav > a:hover{
   border-radius: 5px;
 }
 
-.van-list-container .filters{
-  display: flex;
-  width: 50%;
-  margin: 25px 25%;
-  justify-content: space-between;
-}
-
 .van-list{
   padding: 20px;
   display: flex;
@@ -289,57 +282,6 @@ header nav > a:hover{
 
 .vans .van > a{
   text-decoration: none;
-}
-
-
-.van-type-button {
-  height: 34px;
-  padding: 6px 26px;
-  font-style: normal;
-  font-weight: 500;
-  border: none;
-  border-radius: 5px;
-  background-color: #FFEAD0;
-  color: #4D4D4D;
-  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.van-type-button:hover {
-  color: #FFEAD0;
-}
-
-.van-type-button:focus {
-  outline: none;
-}
-
-.van-type-button.selected {
-  color: #FFEAD0;
-}
-
-.van-type-button.simple:hover, .van-type-button.simple.selected {
-  background-color: #E17654;
-}
-
-.van-type-button.rugged:hover, .van-type-button.rugged.selected {
-  background-color: #115E59;
-}
-
-.van-type-button.luxury:hover, .van-type-button.luxury.selected {
-  background-color: #161616;
-}
-
-.van-type-button.clear-filter {
-  margin-left: -20px;
-  height: 34px;
-  padding: 6px 26px;
-  font-style: normal;
-  font-weight: 500;
-  border: none;
-  border-radius: 5px;
-  text-decoration: underline;
-  background-color: transparent;
-  color: #4D4D4D;
 }
 
 .van-detail-container{
@@ -572,4 +514,92 @@ header nav > a:hover{
   width: 100px;
   height: 100px;
   border-radius: 5px;
+}
+
+.vans-filter-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  margin: 10px 30%;
+}
+
+.van-type, .clear-type{
+  width: 100px;
+  height: 37px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #FFEAD0;
+  color: #4d4d4d;
+  border: none;
+}
+
+
+.clear-type{
+  background-color: #FFF7ED;
+  text-decoration: underline solid 2px #4d4d4d;
+}
+
+.van-type:hover {
+  color: #FFEAD0;
+}
+
+.van-type:focus {
+  outline: none;
+}
+
+.van-type.selected {
+  color: #FFEAD0;
+}
+
+.van-type.simple:hover, .van-type.simple.selected {
+  background-color: #E17654;
+}
+
+.van-type.rugged:hover, .van-type.rugged.selected {
+  background-color: #115E59;
+}
+
+.van-type.luxury:hover, .van-type.luxury.selected {
+  background-color: #161616;
+}
+
+.not-found{
+  width: 100%;
+  padding: 15px;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.not-found button{
+  width: 80%;
+  height: 50px;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.not-found h1{
+  text-align: center;
+  width: 30%;
+}
+
+.not-found button:hover{
+  transform: translate(1px, 1px);
+}
+
+.not-found button > a{
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 7px;
+  color: white;
 }
